@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Meine Flask-App{% endblock %}</title>
+
+    <!-- CSS Dateien einbinden -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/forms.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/tables.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}">
+</head>
+<body>
+
+    <!-- 🔙 Navigation (Zurück & Startseite) -->
+    <div class="nav-buttons">
+        <a href="javascript:history.back()" class="nav-btn">🔙 Zurück</a>
+        <a href="{{ url_for('home') }}" class="nav-btn">🏠 Startseite</a>
+    </div>
+
+    <!-- 🏷️ Header -->
+    <header>
+        <h1 class="page-title">{% block page_title %}Willkommen{% endblock %}</h1>
+        
+        <div class="header-buttons">
+            {% if 'username' in session %}
+                <span class="user-info">👤 {{ session['username'] }}</span>
+                <a href="{{ url_for('auth.logout') }}" class="btn">Logout</a>
+            {% else %}
+                <a href="{{ url_for('auth.login') }}" class="btn">Login</a>
+                <a href="{{ url_for('auth.register') }}" class="btn">Registrieren</a>
+            {% endif %}
+        </div>
+    </header>
+
+    <!-- 🔽 Seiteninhalt -->
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- 📌 Footer -->
+    <footer>
+        <p>© 2025 Meine Flask-App | Erstellt von Consti</p>
+    </footer>
+
+</body>
+</html>

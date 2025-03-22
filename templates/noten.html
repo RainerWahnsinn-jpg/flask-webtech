@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Notenübersicht{% endblock %}
+
+{% block content %}
+    <h1>📖 Deine Noten</h1>
+
+    <section class="noten-section">
+        <table>
+            <thead>
+                <tr>
+                    <th>Fach</th>
+                    <th>Note</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for note in noten %}
+                <tr>
+                    <td>{{ note.fach }}</td>
+                    <td>{{ note.note }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <p><strong>📊 Durchschnitt:</strong> {{ durchschnitt }}</p>
+    </section>
+{% endblock %}

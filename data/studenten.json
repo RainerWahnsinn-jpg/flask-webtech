@@ -1,0 +1,12 @@
+[
+    {
+        "id": 1,
+        "name": "consti",
+        "semester": 1
+    },
+    {
+        "id": 2,
+        "name": "fritz",
+        "semester": 3
+    }
+]

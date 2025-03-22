@@ -1,0 +1,68 @@
+[
+    {
+        "id": 1,
+        "semester": 1,
+        "fach": "Grundlagen der BWL",
+        "note": 1.7
+    },
+    {
+        "id": 2,
+        "semester": 1,
+        "fach": "Mathematik 1",
+        "note": 2.3
+    },
+    {
+        "id": 3,
+        "semester": 2,
+        "fach": "Wirtschaftsinformatik",
+        "note": 1.0
+    },
+    {
+        "id": 4,
+        "semester": 2,
+        "fach": "Programmierung",
+        "note": 2.0
+    },
+    {
+        "id": 5,
+        "semester": 3,
+        "fach": "Datenbanken",
+        "note": 2.3
+    },
+    {
+        "id": 6,
+        "semester": 3,
+        "fach": "Software Engineering",
+        "note": 1.7
+    },
+    {
+        "id": 7,
+        "semester": 4,
+        "fach": "Web Technologies",
+        "note": 1.3
+    },
+    {
+        "id": 8,
+        "semester": 4,
+        "fach": "Projektmanagement",
+        "note": 2.0
+    },
+    {
+        "id": 9,
+        "semester": 5,
+        "fach": "IT-Management",
+        "note": 1.7
+    },
+    {
+        "id": 10,
+        "semester": 5,
+        "fach": "Data Science",
+        "note": 1.3
+    },
+    {
+        "id": 11,
+        "semester": 6,
+        "fach": "AI Product Development & Management",
+        "note": 1.4
+    }
+]

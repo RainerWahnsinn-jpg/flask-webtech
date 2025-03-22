@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block title %}Willkommen{% endblock %}
+
+{% block content %}
+    <!-- 🚀 Begrüßung & Navigation -->
+    <section class="welcome">
+        <h2>🚀 Willkommen auf deiner Lernplattform!</h2>
+        <p>Verwalte deine Noten und Studenten effizient.</p>
+
+        <div class="links">
+            <a href="{{ url_for('noten.noten') }}">📖 Notenübersicht</a>
+            <a href="{{ url_for('studenten.studenten') }}">🎓 Studentenliste</a>
+        </div>
+
+        <!-- 🌤 Wetteranzeige -->
+        <div id="wetter-box">
+            <h3>🌦 Aktuelles Wetter in Siegen</h3>
+            <p id="wetter-info">Lade Wetterdaten ...</p>
+        </div>
+    </section>
+
+    <!-- 🧪 DOM-Testbereich -->
+    <section>
+        <h3>🧪 DOM-Testbereich</h3>
+        <p>Ich bin ein Absatz 1</p>
+        <p>Ich bin ein Absatz 2</p>
+        <p>Ich bin ein Absatz 3</p>
+        <button onclick="highlightParagraphs()">⭐ Hervorheben</button>
+        <button onclick="resetParagraphs()">🔁 Zurücksetzen</button>
+    </section>
+
+    <!-- 🧠 JavaScript -->
+    <script>
+        // 🔄 Wetterdaten abrufen
+        fetch("https://wttr.in/Siegen?format=%C+%t")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("wetter-info").innerText = data;
+            })
+            .catch(() => {
+                document.getElementById("wetter-info").innerText = "❌ Wetterdaten konnten nicht geladen werden.";
+            });
+
+        // ⭐ Hervorheben
+        function highlightParagraphs() {
+            const paragraphs = document.querySelectorAll('p');
+            paragraphs.forEach(p => {
+                p.style.backgroundColor = 'lightyellow';
+                p.style.border = '1px solid orange';
+            });
+        }
+
+        // 🔁 Zurücksetzen
+        function resetParagraphs() {
+            const paragraphs = document.querySelectorAll('p');
+            paragraphs.forEach(p => {
+                p.style.backgroundColor = '';
+                p.style.border = '';
+            });
+        }
+    </script>
+{% endblock %}

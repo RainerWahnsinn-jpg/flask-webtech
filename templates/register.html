@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Registrieren{% endblock %}
+
+{% block content %}
+<div class="register-container">
+    <h2>Registrieren</h2>
+    
+    {% if message %}
+        <p class="error">{{ message }}</p>
+    {% endif %}
+
+    <form method="POST">
+        <input type="text" name="username" placeholder="Benutzername" required>
+        <input type="password" name="password" placeholder="Passwort" required>
+        <button type="submit">Registrieren</button>
+    </form>
+
+    <a class="back-to-login" href="{{ url_for('auth.login') }}">Zurück zum Login</a>
+</div>
+{% endblock %}

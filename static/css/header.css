@@ -1,0 +1,88 @@
+/* 🔹 Header-Bereich */
+header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    background: #007bff;
+    color: white;
+    position: relative;
+    height: 70px;
+}
+
+/* 📌 Seitentitel (zentriert) */
+.page-title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* 🔙 Navigation (Zurück & Startseite) */
+.nav-buttons {
+    display: flex;
+    gap: 10px;
+    position: absolute;
+    left: 20px;
+    top: 20px;  /* Fix: Buttons bleiben oben */
+    z-index: 1000; /* Fix: Buttons bleiben über dem Header */
+}
+
+.nav-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+    border: 1px solid white;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.nav-btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* 🔹 Header-Buttons (Login, Logout, User) */
+.header-buttons {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+/* 👤 Benutzername (gleichmäßig & zentriert) */
+.user-info {
+    background-color: #ffffff;
+    color: #333;
+    padding: 6px 12px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    border: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* 🔓 Login/Register/Logout Buttons */
+.header-buttons .btn {
+    background-color: #28a745;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s;
+    border: none;
+    font-size: 14px;
+}
+
+.header-buttons .btn:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}

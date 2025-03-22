@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}Studentenliste{% endblock %}
+{% block page_title %}📜 Studentenliste{% endblock %}
+
+{% block content %}
+    <section class="students-section">
+        <h2>📚 Eingeschriebene Studenten</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Semester</th>
+                    <th>Aktionen</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for student in studenten %}
+                <tr>
+                    <td>{{ student.id }}</td>
+                    <td>{{ student.name }}</td>
+                    <td>{{ student.semester }}</td>
+                    <td>
+                        <form action="{{ url_for('studenten.delete_student', student_id=student.id) }}" method="POST">
+                            <button type="submit" class="delete-button">🗑 Entfernen</button>
+                        </form>                        
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </section>
+
+    <section class="add-student">
+        <h2>➕ Neuen Studenten hinzufügen</h2>
+        <form action="{{ url_for('studenten.add_student') }}" method="POST">
+            <input type="text" name="name" placeholder="Name" required>
+            <input type="number" name="semester" placeholder="Semester" required>
+            <button type="submit">Hinzufügen</button>
+        </form>
+    </section>
+{% endblock %}
